@@ -8,7 +8,8 @@ import { fileURLToPath, URL } from 'node:url'
 import {resolve} from "path";
 
 const root = resolve(__dirname, 'src')
-const dist = resolve(__dirname, 'dist')
+const dist = resolve(__dirname, 'docs')
+
 // https://vitejs.dev/config/
 export default defineConfig({
   root: root,
@@ -45,9 +46,9 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        parent: resolve(root, "app", "parent", "index.html"),
-        child1: resolve(root, "app", "child1", "index.html"),
-        child2: resolve(root, "app", "child2", "index.html")
+        parent: resolve(root, "index.html"),
+        child1: resolve(root, "child1", "index.html"),
+        child2: resolve(root, "child2", "index.html")
       },
       output: {
         dir: dist
