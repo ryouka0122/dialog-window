@@ -1,1 +1,3 @@
 # dialog-window
+
+postMessageを利用したダイアログを模したTypescriptのサンプル
