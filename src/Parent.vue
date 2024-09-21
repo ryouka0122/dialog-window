@@ -30,7 +30,7 @@ const coverStyle = ref<Record<string, string>>({
 async function onShowModalDialog() {
   coverStyle.value.display = "block";
 
-  const child1Window = showDialog("/child1/", "child1", {
+  const child1Window = showDialog("./child1/", "child1", {
     left: 50,
     top: 100,
     width: 600,
@@ -67,7 +67,7 @@ const resultChild2Message = ref<string>("");
 function onShowModelessDialog() {
 
   // 子ウィンドウの生成
-  const child2Window = showDialog("/child2/", "child2", {
+  const child2Window = showDialog("./child2/", "child2", {
     left: 400,
     top: 100,
     width: 600,
