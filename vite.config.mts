@@ -13,7 +13,7 @@ const dist = resolve(__dirname, 'docs')
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "./",
+  base: "/dialog-window/",
   root: root,
   plugins: [
     Vue({
