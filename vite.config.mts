@@ -1,6 +1,7 @@
 // Plugins
 import Vue from '@vitejs/plugin-vue'
 import Vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
+import deleteSync from 'rollup-plugin-delete'
 
 // Utilities
 import { defineConfig } from 'vite'
@@ -52,8 +53,14 @@ export default defineConfig({
         child2: resolve(root, "child2", "index.html")
       },
       output: {
-        dir: dist
-      }
+        dir: dist,
+      },
+      plugins: [
+        deleteSync({
+          targets: "docs/*",
+          hook: "buildStart"
+        })
+      ]
     }
   }
 })
