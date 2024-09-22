@@ -32,13 +32,15 @@ jobs:
         uses: actions/configure-pages@v5
       - run: npm ci
       - run: npm run build
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./docs
-          destination: ./_site
+      # - name: Build with Jekyll
+      #   uses: actions/jekyll-build-pages@v1
+      #   with:
+      #     source: ./docs
+      #     destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./docs
 
   # Deployment job
   deploy:
